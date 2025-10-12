@@ -16,6 +16,7 @@
 #include "nbayes.h"
 #include "utils.h"
 #include "activation.h"
+#include "loss.h"
 
 using namespace std;
 
@@ -55,6 +56,14 @@ int main()
         cout<<s<<", ";
     }
     cout<<endl;
+
+    cout<<"Test one-hot-encodding. Number of classes 4, value 3"<<endl;
+    vector<int> encoded = encode_one_hot(4, 3);
+    print_vector(encoded);
+
+    CrossEntropy ce;
+    float loss_value = ce.forward({{-1.5, 1.2, 0.3, 1.9}},encoded);
+    cout<<"Loss value: "<<loss_value<<endl; 
 
     return 0;
 }

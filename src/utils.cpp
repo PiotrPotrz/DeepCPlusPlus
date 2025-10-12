@@ -4,6 +4,8 @@
 #include <functional>
 #include "dataloader.h"
 
+using namespace std;
+
 float accuracy(function<int(IrisSample)> predictor, vector <IrisSample>& test)
 {
     int correct = 0;
@@ -15,3 +17,12 @@ float accuracy(function<int(IrisSample)> predictor, vector <IrisSample>& test)
     float accuracy = static_cast<float>(correct) / test.size();
     return accuracy;
 }
+
+vector<int> encode_one_hot(int num_classes, int value)
+{
+    vector<int> encoded(num_classes);
+    encoded[value] = 1;
+    return encoded;
+}
+
+
