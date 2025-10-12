@@ -15,6 +15,7 @@
 #include "knn.h"
 #include "nbayes.h"
 #include "utils.h"
+#include "activation.h"
 
 using namespace std;
 
@@ -34,6 +35,26 @@ int main()
     NBayes nb(3);
     nb.train(train);
     cout<<"Prediction score: "<<accuracy([&] (IrisSample s) {return  nb.predict(s);}, test) << endl;
+
+    cout<<"Some sample data for activation"<<endl;
+    vector<float> data = {-0.9, 2.0, 0.1, 0};
+    cout<<"ReLU"<<endl;
+    ReLU relu;
+    // cout << relu.compute_activation(data)<<endl;
+    vector<float> relu_results = relu.compute_activation(data);
+    for(auto r:relu_results)
+    {
+        cout<<r<<", ";
+    }
+    cout<<endl;
+
+    Softmax softmax;
+    vector<float> softmax_results = softmax.compute_activation(data);
+        for(auto s:softmax_results)
+    {
+        cout<<s<<", ";
+    }
+    cout<<endl;
 
     return 0;
 }
