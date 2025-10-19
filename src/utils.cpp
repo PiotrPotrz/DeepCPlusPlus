@@ -62,3 +62,57 @@ for(int i = 0; i< m.size(); i++)
 return out_vector;
 
 };
+
+int decode_one_hot(vector<int>& one_hot)
+{
+    int label = 0;
+    for(int elem:one_hot)
+    {
+        if(elem!=1)
+        {
+            label++;
+        }
+        else
+        {
+            break;
+        }
+    }
+    return label;
+}
+
+int argmax(vector<float>& preds)
+{
+    int idx=0;
+    float max_val=0.0f;
+
+    for(int i = 0; i < preds.size(); i++)
+    {
+        if(preds[i]>max_val)
+        {
+            idx = i;
+            max_val = preds[i];
+        }
+    }
+    return idx;
+}
+
+float accuracy_metric(vector<int>& y_pred, vector<int>& y_true)
+{
+    int size_pred = y_pred.size();
+    int size_true = y_true.size();
+    if(size_pred!=size_true)
+    {
+        throw runtime_error("Sizes are not equal");
+    }
+    int correct = 0;
+
+    for(int i = 0; i < size_pred; i++)
+    {
+        if(y_pred[i]==y_true[i])
+        {
+            correct++;
+        }
+    }
+    float accuracy = static_cast<float>(correct)/y_pred.size();
+    return accuracy;
+}
