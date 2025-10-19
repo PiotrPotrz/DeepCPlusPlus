@@ -10,7 +10,6 @@ class NeuralNetwork
 public:
     NeuralNetwork() = default;
     std::vector<float> forward(std::vector<float>& input);
-    // std::vector<TensorElement> Network;
     std::vector<std::unique_ptr<TensorElement>> Network;
 
 };

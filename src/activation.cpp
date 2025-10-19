@@ -39,13 +39,6 @@ void ReLU::backward(std::vector<float>& prev_grad)
     }
 };
 
-
-
-// float Softmax::sigmoid(float data_point)
-// {
-//     return 1/(1 + exp(-data_point));
-// }
-
 vector<float> Softmax::forward(std::vector<float>& x)
 {
     inputs = x;

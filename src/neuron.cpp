@@ -46,7 +46,6 @@ void Neuron::backward(float prev_grad)
     {
         gradients.push_back(inputs[i] * prev_grad);
     }
-    // gradient for bias 
     gradients.push_back(prev_grad);
 }
 

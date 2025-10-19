@@ -16,7 +16,6 @@ vector<float> NeuralNetwork::forward(vector<float>& inputs)
         }
         else
         {
-            // out = Network[i].forward(out);
             out = Network[i]->forward(out);
         }
     }

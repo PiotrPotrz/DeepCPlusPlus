@@ -17,28 +17,4 @@ private:
     std::vector<int> lb;
 };
 
-// class Loss
-// {
-//     public:
-//         Loss() = default;
-//         virtual ~Loss() = default;
-//         virtual float forward(const std::vector<std::vector<float>>& pred, const std::vector<int>& labels)=0;
-// };
-
-// class BinaryCrossEntropy : public Loss
-// {
-//     public:
-//         BinaryCrossEntropy() = default;
-//         float forward(const std::vector<std::vector<float>>& pred, const std::vector<int>& labels) override;
-// };
-
-// class CrossEntropy : public Loss
-// {
-//     public:
-//         CrossEntropy(bool with_softmax);
-//         float forward(const std::vector<std::vector<float>>& pred, const std::vector<int>& labels) override;
-//     private:
-//         bool with_softmax;
-//     };
-
 #endif

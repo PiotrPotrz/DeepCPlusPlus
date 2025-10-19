@@ -50,7 +50,6 @@ vector<float> out_vector;
 out_vector.reserve(m.size());
 if(m[0].size()!=v.size())
 {
-    // cout<<"Incompatibile sizes!!!"<<endl;
     throw std::length_error("Incompatibile sizes!");
 }
 

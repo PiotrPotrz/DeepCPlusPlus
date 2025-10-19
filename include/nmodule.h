@@ -30,8 +30,6 @@ public:
     ScalarElement() = default;
     virtual ~ScalarElement() = default;
 
-    //     virtual float forward(std::vector<float>& x) = 0;
-    // virtual void backward(float prev_grad) = 0;
     virtual float forward(std::vector<float>& x) {
         throw std::logic_error("forward() not implemented for this type.");
     }
