@@ -28,9 +28,11 @@ using namespace std;
 int main()
 {
     vector<IrisSample> dataset = loadIris();
+    // vector<IrisSample> dataset = loadWine(); // uncomment for wine dataset
 
-    auto [train, test] = split_dataset(dataset, 0.8, 42);
+    cout<<"Features size: "<<dataset[0].features.size()<<endl;
 
+    auto [train, test] = split_dataset(dataset, 0.8, 42, false);
 
     kNN knn(train,20,3);
     cout<<"KNN classifier" << endl;
@@ -46,12 +48,13 @@ int main()
 
     NeuralNetwork NN;
 
+    int in_features = dataset[0].features.size();
     NN.Network.clear();
-    NN.Network.push_back(std::make_unique<MLPLayer>(4, 4));
+    NN.Network.push_back(std::make_unique<MLPLayer>(in_features, 5));
     NN.Network.push_back(std::make_unique<ReLU>());
-    NN.Network.push_back(std::make_unique<MLPLayer>(4, 4));
+    NN.Network.push_back(std::make_unique<MLPLayer>(5, 5));
     NN.Network.push_back(std::make_unique<ReLU>());
-    NN.Network.push_back(std::make_unique<MLPLayer>(4, 3));
+    NN.Network.push_back(std::make_unique<MLPLayer>(5, 3));
     NN.Network.push_back(std::make_unique<Softmax>());
 
     float learning_rate = 0.001;
