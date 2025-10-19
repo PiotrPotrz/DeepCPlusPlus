@@ -1,10 +1,46 @@
-<h1>IRIS IN C++</h1>
+# DeepC++ - Machine Learning in C++
 
-Code contains implementation of some ML algorithms for the task of classification with IRIS dataset.
+## Overview
+This repository contains my own implementation of several machine learning algorithms including Neural Network.  
+Its purpose is purely educational.  
+Entire code was written in pure C++17 - no additional libraries required.  
+In this sample I attached the popular IRIS Dataset downloaded from [here](https://archive.ics.uci.edu/dataset/53/iris).
 
-The classifiers implemented:
+### Algorithms implemented
+* kNN - K Nearest Neighbors Classifier
+* NBayes - Naive Bayes Classifier
+* Artificial Neuron
+* Layer of neuron net
+* Neural Network - a neural network consisting of simple neuron layers
 
-<ul>
-<li>KNN - K Nearest Neighbours classifier,</li>
-<li>NBayes - Naive Bayes classifier.</li>
-</ul>
+### Functions implemented
+* Softmax - a function to calculate probability scores for predictions
+* ReLU - a commonly used activation function in neural networks
+* Categorical Cross-Entropy - a loss function used in multiclass classification
+* Accuracy score - a metric commonly used for benchmarking different AI models
+* many others!
+
+### Build and usage
+
+To build the project, run the following commands.
+
+```bash
+cd build
+```
+
+
+```bash
+cmake .
+```
+
+
+```bash
+make 
+```
+
+Then you can run the code.
+
+
+```bash
+./iris_ml
+```
