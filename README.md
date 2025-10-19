@@ -4,7 +4,7 @@
 This repository contains my own implementation of several machine learning algorithms including Neural Network.  
 Its purpose is purely educational.  
 Entire code was written in pure C++17 - no additional libraries required.  
-In this sample I attached the popular IRIS Dataset downloaded from [here](https://archive.ics.uci.edu/dataset/53/iris).
+In this sample I attached the popular IRIS Dataset downloaded from [here](https://archive.ics.uci.edu/dataset/53/iris). Dataset Wine comes from [here](https://archive.ics.uci.edu/dataset/109/wine).
 
 ### Algorithms implemented
 * kNN - K Nearest Neighbors Classifier
